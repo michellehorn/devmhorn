@@ -37,6 +37,13 @@ code {
   color: white;
 }
 
+.active {
+  font-weight: 800;
+}
+
+.active span {
+  font-weight: 400;
+}
 /*  Alignment classes */
 .d-flex {
   display: flex;

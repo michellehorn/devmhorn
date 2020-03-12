@@ -11,7 +11,11 @@ function Navigation(props) {
   ];
 
   const listItems = tab.map(item => (
-    <NavItem href={`#${item.to}`} key={item.to.toString()}>
+    <NavItem
+      className={`${props.hash}` === `#${item.to}` ? "active" : ""}
+      href={`#${item.to}`}
+      key={item.to.toString()}
+    >
       {item.text}
       <span>|</span>
     </NavItem>

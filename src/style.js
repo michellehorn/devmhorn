@@ -12,6 +12,11 @@ export const Section = styled.div`
 export const Container = styled.div`
   padding: 15px;
   text-align: center;
+  width: ${props => props.maxwidth}px;
+  margin-top: ${props => props.top}px;
+  > svg {
+    padding: 10px;
+  }
 `;
 export const Title = styled.h1`
   font-weight: 800;
@@ -48,7 +53,7 @@ export const Content = styled.p`
 `;
 
 export const Image = styled.img`
-  width: 350px;
+  width: 300px;
 `;
 
 export const BoxArea = styled.div`
@@ -62,8 +67,12 @@ export const BoxArea = styled.div`
 `;
 
 export const Text = styled.span`
-  color: white;
+  color: ${props => (props.color ? props.color : "white")};
   font-size: ${props => props.size}px;
+  display: block;
+  font-weight: ${props => props.fontWeight};
+  background-color: ${props => props.bgColor};
+  margin: ${props => props.margin};
 `;
 
 export const Box = styled.div`
@@ -127,5 +136,9 @@ export const SubmitButton = styled.button`
   float: right;
   text-align: center;
   margin-right: -17px;
-  
+  &:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 10px white;
+    border: 2px solid white;
+  }
 `;

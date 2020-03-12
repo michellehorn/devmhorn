@@ -8,7 +8,8 @@ import Navigation from "./components/Navigation/Navigation";
 
 export default class App extends Component {
   state = {
-    theme: "light"
+    theme: "light",
+    hash: '#home'
   };
 
   componentDidMount() {
@@ -21,15 +22,15 @@ export default class App extends Component {
 
   handleScroll = () => {
     const lastScrollY = window.scrollY;
-
     window.requestAnimationFrame(() => {
       this.setState({ theme: lastScrollY > 717 ? "dark" : "light" });
+      this.setState({ hash: window.location.hash });
     });
   };
   render() {
     return (
       <div className="App">
-        <Navigation>{this.state.theme}</Navigation>
+        <Navigation hash={this.state.hash}>{this.state.theme}</Navigation>
         <div id="home">
           <Home />
         </div>
