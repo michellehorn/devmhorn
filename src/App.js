@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Home from "./sections/Home";
+import About from "./sections/About";
+import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
+import Navigation from "./components/Navigation/Navigation";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  state = {
+    theme: "light"
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll, true);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = () => {
+    const lastScrollY = window.scrollY;
+
+    window.requestAnimationFrame(() => {
+      this.setState({ theme: lastScrollY > 717 ? "dark" : "light" });
+    });
+  };
+  render() {
+    return (
+      <div className="App">
+        <Navigation>{this.state.theme}</Navigation>
+        <div id="home">
+          <Home />
+        </div>
+        <div id="about">
+          <About />
+        </div>
+        <div id="skills">
+          <Skills />
+        </div>
+        <div id="projects">
+          <Projects />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
+      </div>
+    );
+  }
 }
-
-export default App;
