@@ -4,6 +4,7 @@ export const Navbar = styled.nav`
   position: fixed;
   padding-top: 20px;
   display: flex;
+  z-index: 10;
   justify-content: center;
   align-items: center;
   height: 68px;

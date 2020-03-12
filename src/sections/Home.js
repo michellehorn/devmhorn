@@ -8,7 +8,7 @@ export default class Home extends Component {
       <>
         <Background>
           <Container>
-            <Title>Hi, I'm Michelle,</Title>
+            <Title size={80}>Hi, I'm Michelle,</Title>
             <Subtitle>
               a <b>front-end developer </b>based in Florianópolis/BR
             </Subtitle>

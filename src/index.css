@@ -42,10 +42,18 @@ code {
   display: flex;
 }
 
+.d-block {
+  display: block;
+}
+
 .d-flex.centered {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .pl-2 {
@@ -56,17 +64,10 @@ code {
   max-width: 800px;
 }
 
-/* Size classes */
-
-
-.small-text {
-  font-size: 17px;
+#contact-social-box {
+  padding: 100px 1em 1em 4em;
 }
 
-.regular-text {
-  font-size: 20px;
-}
-
-.regular-text-title {
-  font-size: 25px;
+#contact-social-box svg {
+  padding-right: 27px;
 }

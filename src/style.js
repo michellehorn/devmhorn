@@ -7,7 +7,7 @@ export const Section = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: -2;
+  z-index: ${props => props.zindex};
 `;
 export const Container = styled.div`
   padding: 15px;
@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   font-weight: 800;
   color: white;
-  font-size: 80px;
+  font-size: ${props => props.size}px;
   margin-bottom: 0;
   margin-top: 0;
 `;
@@ -63,21 +63,69 @@ export const BoxArea = styled.div`
 
 export const Text = styled.span`
   color: white;
+  font-size: ${props => props.size}px;
 `;
 
 export const Box = styled.div`
   height: 500px;
+  margin-top: 2em;
   width: 100%;
-  padding: 1em 10px;
+  min-width: 500px;
+  padding: 2em 10px;
+  padding-top: 2em;
 `;
 
 export const Form = styled.form`
   border: none;
+  padding: 3em;
+  align-items: right;
 `;
 
 export const Input = styled.input`
   height: 48px;
   border: 2px solid white;
+  font-size: 17px;
+  color: white;
+  width: 100%;
+  padding: 0px 6px;
+  margin-bottom: 25px;
   background: transparent;
+  &::placeholder {
+    color: white;
+    font-size: 17px;
+  }
 `;
 
+export const Link = styled.a`
+  text-decoration: none;
+  :hover {
+    cursor: pointer;
+  }
+`;
+
+export const TextArea = styled.textarea`
+  height: 170px;
+  width: 100%;
+  padding: 0px 6px;
+  padding-top: 8px;
+  font-size: 17px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  &::placeholder {
+    color: white;
+    font-size: 17px;
+  }
+`;
+
+export const SubmitButton = styled.button`
+  width: 180px;
+  height: 48px;
+  background: white;
+  color: #c2946d;
+  font-size: 17px;
+  float: right;
+  text-align: center;
+  margin-right: -17px;
+  
+`;
