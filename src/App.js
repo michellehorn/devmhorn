@@ -5,15 +5,19 @@ import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import Navigation from "./components/Navigation/Navigation";
+import { firebaseConfig } from "./firebase.config";
+import firebase from "firebase";
 
 export default class App extends Component {
   state = {
     theme: "light",
-    hash: '#home'
+    hash: "#home"
   };
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll, true);
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
   }
 
   componentWillUnmount() {

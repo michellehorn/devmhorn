@@ -13,8 +13,34 @@ import {
   SubmitButton
 } from "../style";
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import firebase from "firebase";
 
 export default class Contact extends Component {
+  state = {
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    dateTime: ""
+  };
+
+  handleSubmit = (evt) => {
+    evt.preventDefault();
+    this.setState({ name: evt.target.name.value });
+    this.setState({ email: evt.target.email.value });
+    this.setState({ phone: evt.target.phone.value });
+    this.setState({ message: evt.target.message.value });
+    this.setState({ dateTime: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() });
+    
+    setTimeout(() => {
+      let ref = firebase.database().ref("messages");
+      ref.push(this.state, () => {
+        console.log(this.state);
+        alert("Mensagem enviada!");
+      });
+    }, 2000);
+  
+  }
   render() {
     return (
       <>
@@ -48,12 +74,12 @@ export default class Contact extends Component {
               </Container>
             </Box>
             <Box className="yellow-dark-bg">
-              <Form>
-                <Input placeholder="Name" />
-                <Input placeholder="E-mail" />
-                <Input placeholder="Phone number (optional)" />
-                <TextArea placeholder="Message" />
-                <SubmitButton>Enviar</SubmitButton>
+              <Form onSubmit={this.handleSubmit}>
+                <Input placeholder="Name" name="name" />
+                <Input placeholder="E-mail" name="email" />
+                <Input placeholder="Phone number (optional)" name="phone"/>
+                <TextArea placeholder="Message" name="message"/>
+                <SubmitButton type="submit">Enviar</SubmitButton>
               </Form>
             </Box>
           </Container>
