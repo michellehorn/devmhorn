@@ -23,7 +23,7 @@ export default class App extends Component {
   handleScroll = () => {
     const lastScrollY = window.scrollY;
     window.requestAnimationFrame(() => {
-      this.setState({ theme: lastScrollY > 717 ? "dark" : "light" });
+      this.setState({ theme: lastScrollY > 600 ? "dark" : "light" });
       this.setState({ hash: window.location.hash });
     });
   };

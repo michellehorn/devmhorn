@@ -20,7 +20,7 @@ export default class Contact extends Component {
       <>
         <Section className="yellow-bg d-block">
           <Badge>Contact</Badge>
-          <Container className="d-flex">
+          <Container className="d-flex" top={70}>
             <Box className="dark-bg">
               <Title size={100}>get in</Title>
               <Title size={90} className="pl-2">

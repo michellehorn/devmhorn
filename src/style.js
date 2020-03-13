@@ -77,11 +77,11 @@ export const Text = styled.span`
 
 export const Box = styled.div`
   height: 500px;
-  margin-top: 2em;
+  margin-top: 1em;
   width: 100%;
-  min-width: 500px;
+  min-width: 400px;
+  max-width: 700px;
   padding: 2em 10px;
-  padding-top: 2em;
 `;
 
 export const Form = styled.form`
