@@ -142,3 +142,20 @@ export const SubmitButton = styled.button`
     border: 2px solid white;
   }
 `;
+
+export const ButtonProj = styled.button`
+  background: transparent;
+  border: 2px solid ${props => props.color};
+  color: ${props => props.color};
+  height: 39px;
+  border-radius: 8px;
+  font-size: 17px;
+  width: 230px;
+  margin-top: 20px;
+  &:hover {
+    background: ${props => props.color};
+    color: ${props => props.bgColor};
+    border: 2px solid ${props => props.color};
+    cursor: pointer;
+  }
+`

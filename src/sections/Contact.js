@@ -18,7 +18,7 @@ export default class Contact extends Component {
   render() {
     return (
       <>
-        <Section className="yellow-bg d-block">
+        <Section className="yellow-bg">
           <Badge>Contact</Badge>
           <Container className="d-flex" top={70}>
             <Box className="dark-bg">

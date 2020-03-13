@@ -64,7 +64,12 @@ export default class Skills extends Component {
               <Container maxwidth={350} top={30} className="d-flex centered">
                 <Container maxwidth={350}>
                   {softSkills.map(item => (
-                    <Text size={20} fontWeight={800} margin="5px 0px">
+                    <Text
+                      size={20}
+                      fontWeight={800}
+                      key={item}
+                      margin="5px 0px"
+                    >
                       <i>{item}</i>
                     </Text>
                   ))}

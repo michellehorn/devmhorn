@@ -50,7 +50,11 @@ code {
 }
 
 .d-block {
-  display: block;
+  display: block !important;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
 
 .d-flex.centered {
@@ -78,3 +82,4 @@ code {
 #contact-social-box svg {
   padding-right: 27px;
 }
+
