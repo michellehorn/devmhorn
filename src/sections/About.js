@@ -12,16 +12,12 @@ export default class About extends Component {
             <Image src={profileImg} alt="Profile" />
             <Container id="about-area">
               <Content>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry’s standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
+              Hi, my name is Michelle Horn, I’m a front-end developer, with about 4 years of experience. I’m from Florianópolis/BR where I currently live.
+During my journey, I’ve worked with the top 3 front-end technologies (Angular 2+, Reactjs and Vuejs), besides having solid knowledge in base technologies (html, css, javascript).
+
+I love the education field and have big involvement with the cause. I’m currently working with the company Trybe, that is education for developers, and I’m also involvment with Gama Experience, a project from Gama Academy (where I help as a mentor for new developers during the course).
+
+Personally, I define myself as a “Nuttela nerd”, cause even tho in love with technology, Star Wars, super heroes and gams, I also love going to the bar to drink some beer with friends. You can check more about me in the next sections of this website.
               </Content>
             </Container>
           </Container>
