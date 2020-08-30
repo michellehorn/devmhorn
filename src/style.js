@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { isMobile } from 'react-device-detect';
 
 export const Section = styled.div`
-  width: 100vw;
-  height: 105vh;
+  width: 100%;
+  height: ${isMobile ? (props => props.height ? props.height : '170vh'): '105vh'};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +11,7 @@ export const Section = styled.div`
   z-index: ${props => props.zindex};
 `;
 export const Container = styled.div`
-  padding: 15px;
+  padding: ${props => props.padding ? props.padding : '15px'};
   text-align: center;
   width: ${props => props.maxwidth}px;
   margin-top: ${props => props.top}px;
@@ -56,9 +57,14 @@ export const Image = styled.img`
   width: 300px;
 `;
 
+export const Icon = styled.img`
+  width: ${props => props.size}px;
+  margin: 10px 15px;
+  `
+
 export const BoxArea = styled.div`
   box-shadow: 5px 5px 10px grey;
-  margin: 20px;
+  margin: ${props => props.margin};
   margin-top: 3em;
   height: 500px;
   min-width: 400px;
@@ -78,7 +84,7 @@ export const Text = styled.span`
 export const Box = styled.div`
   height: 500px;
   margin-top: 1em;
-  width: 100%;
+  width: 95%;
   min-width: 400px;
   max-width: 700px;
   padding: 2em 10px;
@@ -128,6 +134,7 @@ export const TextArea = styled.textarea`
 `;
 
 export const SubmitButton = styled.button`
+  margin-top: 0.75em;
   width: 180px;
   height: 48px;
   background: white;
@@ -136,6 +143,7 @@ export const SubmitButton = styled.button`
   float: right;
   text-align: center;
   margin-right: -17px;
+  border: none;
   &:hover {
     cursor: pointer;
     box-shadow: 2px 2px 10px white;
@@ -157,5 +165,17 @@ export const ButtonProj = styled.button`
     color: ${props => props.bgColor};
     border: 2px solid ${props => props.color};
     cursor: pointer;
+  }
+`
+export const Footer = styled.div`
+  background: #F8EFE7;
+  color: #333;
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  margin: auto;
+  font-size: 17px;
+  span {
+    color: red;
   }
 `

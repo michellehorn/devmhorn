@@ -10,10 +10,11 @@ import {
   Text,
   Link,
   TextArea,
-  SubmitButton
+  SubmitButton,
 } from "../style";
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import firebase from "firebase";
+import { isMobile } from 'react-device-detect';
 
 export default class Contact extends Component {
   state = {
@@ -21,7 +22,7 @@ export default class Contact extends Component {
     email: "",
     phone: "",
     message: "",
-    dateTime: ""
+    dateTime: "",
   };
 
   handleSubmit = (evt) => {
@@ -30,8 +31,11 @@ export default class Contact extends Component {
     this.setState({ email: evt.target.email.value });
     this.setState({ phone: evt.target.phone.value });
     this.setState({ message: evt.target.message.value });
-    this.setState({ dateTime: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() });
-    
+    this.setState({
+      dateTime:
+        new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
+    });
+
     setTimeout(() => {
       let ref = firebase.database().ref("messages");
       ref.push(this.state, () => {
@@ -39,19 +43,20 @@ export default class Contact extends Component {
         alert("Mensagem enviada!");
       });
     }, 2000);
-  
-  }
+  };
   render() {
     return (
       <>
-        <Section className="yellow-bg">
+        <Section className="yellow-bg" height="220vh">
           <Badge>Contact</Badge>
-          <Container className="d-flex" top={70}>
-            <Box className="dark-bg">
-              <Title size={100}>get in</Title>
-              <Title size={90} className="pl-2">
-                touch
-              </Title>
+          <Container className={`${isMobile ? "" : 'd-flex'}`} top={70} padding="0">
+            <Box className="dark-bg" height={`${isMobile ? "400vh" : ""}`}>
+              <div className="pt-2">
+                <Title size={100}>get in</Title>
+                <Title size={90} className="pl-2">
+                  touch
+                </Title>
+              </div>
               <Container id="contact-social-box">
                 <Container className="d-flex centered">
                   <Link href="https://github.com/michellehorn" target="_blank">
@@ -77,8 +82,8 @@ export default class Contact extends Component {
               <Form onSubmit={this.handleSubmit}>
                 <Input placeholder="Name" name="name" />
                 <Input placeholder="E-mail" name="email" />
-                <Input placeholder="Phone number (optional)" name="phone"/>
-                <TextArea placeholder="Message" name="message"/>
+                <Input placeholder="Phone number (optional)" name="phone" />
+                <TextArea placeholder="Message" name="message" />
                 <SubmitButton type="submit">Enviar</SubmitButton>
               </Form>
             </Box>

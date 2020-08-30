@@ -6,7 +6,7 @@ export const ContainerBg = styled.div`
   background-size: cover;
    margin: -5px -10px -10px -5px;
   filter: blur(10px);
-  width: 100vw;
+  width:99%;
   height: 105vh;
   display: flex;
   opacity: 0.36;

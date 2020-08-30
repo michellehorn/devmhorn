@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { Section, Badge, Container, Content, Image } from "../style";
 import profileImg from "../assets/photo.svg";
+import { isMobile } from 'react-device-detect';
 
 export default class About extends Component {
   render() {
     return (
       <>
-        <Section className="yellow-bg">
+        <Section className="yellow-bg" height="170vh">
           <Badge>About</Badge>
-          <Container>
+          <Container top={`${isMobile ? '100' : ''}`}>
             <Image src={profileImg} alt="Profile" />
             <Container id="about-area">
               <Content>

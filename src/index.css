@@ -71,6 +71,10 @@ code {
   margin-left: 1em;
 }
 
+.pt-2 {
+  margin-top: 2em;
+}
+
 #about-area {
   max-width: 800px;
 }
@@ -83,3 +87,6 @@ code {
   padding-right: 27px;
 }
 
+.container {
+  width: 90vw;
+}

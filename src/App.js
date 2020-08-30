@@ -5,13 +5,14 @@ import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import Navigation from "./components/Navigation/Navigation";
+import { Footer } from "./style.js";
 import { firebaseConfig } from "./firebase.config";
 import firebase from "firebase";
 
 export default class App extends Component {
   state = {
     theme: "light",
-    hash: "#home"
+    hash: "#home",
   };
 
   componentDidMount() {
@@ -50,6 +51,7 @@ export default class App extends Component {
         <div id="contact">
           <Contact />
         </div>
+        <Footer>Made with <span>&#10084;</span> by <a target="_blank" rel="noopener noreferrer" href="https://github.com/michellehorn">@michellehorn</a></Footer>
       </div>
     );
   }

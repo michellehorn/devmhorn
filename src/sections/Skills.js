@@ -11,6 +11,7 @@ import {
   FaSass,
   FaLess
 } from "react-icons/fa";
+import { isMobile } from 'react-device-detect';
 
 export default class Skills extends Component {
   render() {
@@ -31,14 +32,14 @@ export default class Skills extends Component {
     ];
     return (
       <>
-        <Section className="yellow-bg">
+        <Section className="yellow-bg" height="220vh">
           <Badge>Skills</Badge>
-          <Container className="d-flex centered">
-            <BoxArea className="dark-bg text-light">
+          <Container className={`${isMobile ? "centered" : "d-flex centered" }`} padding="0">
+            <BoxArea className="dark-bg text-light" margin={`${isMobile ? '0' : '10px'}`}>
               <Text size={25} className="regular-text-title">
                 <b>Hard skills</b>
               </Text>
-              <Container maxwidth={350} top={30} className="d-flex centered">
+              <Container maxwidth={300} top={30} className="d-flex centered" >
                 <Container maxwidth={300}>
                   <FaVuejs size={80} color="#3eaf7c" />
                   <FaHtml5 size={80} color="orange" />
@@ -56,12 +57,12 @@ export default class Skills extends Component {
                 </Container>
               </Container>
             </BoxArea>
-            <BoxArea className="yellow-dark-bg text-light">
+            <BoxArea className="yellow-dark-bg text-light" margin={`${isMobile ? '0' : '10px'}`}>
               <Text size={25} className="regular-text-title">
                 <b>Soft skills</b>
               </Text>
 
-              <Container maxwidth={350} top={30} className="d-flex centered">
+              <Container maxwidth={350} top={30} className="d-flex centered" padding="0">
                 <Container maxwidth={350}>
                   {softSkills.map(item => (
                     <Text

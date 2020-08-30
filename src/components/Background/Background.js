@@ -6,7 +6,7 @@ import { Section } from "../../style";
 function Background(props) {
     return (
       <>
-        <Section className="dark-bg" zindex="-2">
+        <Section height="110vh" className="dark-bg" zindex="-2">
         <ContainerBg />
         {props.children}
         </Section>

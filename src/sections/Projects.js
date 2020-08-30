@@ -7,6 +7,7 @@ import a3 from "../assets/images/A3.png";
 import a4 from "../assets/images/A4.png";
 import a5 from "../assets/images/A5.png";
 import a6 from "../assets/images/A6.png";
+import { isMobile } from 'react-device-detect';
 
 export default class Projects extends Component {
   save() {
@@ -51,15 +52,15 @@ export default class Projects extends Component {
           "Project made with love for Saltimbancos' ONG, using Angular and hosting in firebase",
         linkButton: "https://abrigosaltimbancos.com.br/",
         image: a6
-      }
+      },
     ];
 
     return (
       <>
-        <Section className="yellow-bg ">
+        <Section className="yellow-bg" height={`${isMobile ? '240vh' : ''}`}>
           <Badge>Projects</Badge>
           <Container className="d-block" top={100}>
-            <Container className="d-flex centered wrap" width={400}>
+            <Container className="d-flex centered wrap container" padding="0">
               {projectsList.map((item, ind) => (
                 <ProjectCard
                   key={ind}
