@@ -39,7 +39,6 @@ export const Contact = () => {
   }
 
   const handleChange = (e) => {
-    console.log()
     const { name, value } = e.target;
     setState(prevState => ({
       ...prevState,
@@ -51,7 +50,6 @@ export const Contact = () => {
     e.preventDefault();
     let ref = firebase.database().ref("messages");
     if (verifyField(state)) {
-      console.log(verifyField(state))
       ref.push(state, () => {
         alert("Mensagem enviada!");
       });
