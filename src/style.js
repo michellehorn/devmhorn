@@ -11,13 +11,13 @@ export const Section = styled.div`
   z-index: ${props => props.zindex};
 `;
 export const Container = styled.div`
-  padding: ${props => props.padding ? props.padding : '15px'};
-  text-align: center;
   width: ${props => props.maxwidth}px;
   margin-top: ${props => props.top}px;
   > svg {
     padding: 10px;
   }
+  text-align: center;
+  padding: ${props => props.padding};
 `;
 export const Title = styled.h1`
   font-weight: 800;
@@ -85,7 +85,6 @@ export const Box = styled.div`
   height: 500px;
   margin-top: 1em;
   width: 95%;
-  min-width: 400px;
   max-width: 700px;
   padding: 2em 10px;
 `;
@@ -109,6 +108,7 @@ export const Input = styled.input`
     color: white;
     font-size: 17px;
   }
+  font-family:'Raleway', sans-serif;
 `;
 
 export const Link = styled.a`
@@ -131,6 +131,7 @@ export const TextArea = styled.textarea`
     color: white;
     font-size: 17px;
   }
+  font-family:'Raleway', sans-serif;
 `;
 
 export const SubmitButton = styled.button`

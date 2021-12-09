@@ -4,7 +4,7 @@ import img from "../../assets/bg4.jpg";
 export const ContainerBg = styled.div`
   background-image: url(${img});
   background-size: cover;
-   margin: -5px -10px -10px -5px;
+  margin: -5px -10px -10px -5px;
   filter: blur(10px);
   width:99%;
   height: 105vh;

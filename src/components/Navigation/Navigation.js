@@ -11,10 +11,10 @@ import { isMobile } from 'react-device-detect';
 function Navigation(props) {
   const tab = [
     { to: "home", text: "Home", icon: casa },
-    { to: "about", text: "About me", icon: contato },
-    { to: "skills", text: "Skills", icon: util  },
+    { to: "about", text: "About me", icon: util },
+    { to: "skills", text: "Skills", icon: think  },
     { to: "projects", text: "Projects", icon: list  },
-    { to: "contact", text: "Contact", icon: think  }
+    { to: "contact", text: "Contact", icon: contato  }
   ];
 
   const listItems = () => {
@@ -35,8 +35,6 @@ function Navigation(props) {
       ));
     }
   }
-  
-  console.log(listItems)
   
   return <Navbar className={props.children}>{listItems()}</Navbar>;
 }
