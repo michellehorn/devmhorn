@@ -93,6 +93,10 @@ code {
   padding-right: 27px;
 }
 
+#contact-social-box svg:hover {
+  opacity: 0.6;
+}
+
 .container {
   width: 90vw;
 }

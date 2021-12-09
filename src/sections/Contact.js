@@ -28,7 +28,7 @@ export const Contact = () => {
   const verifyField = (fields) => {
     let isComplete = true;
     let incompleteFields = [];
-    Object.keys(fields).map((item) => {
+    Object.keys(fields).forEach((item) => {
       if (fields[item] === "") {
        isComplete = false;
        incompleteFields.push(item);

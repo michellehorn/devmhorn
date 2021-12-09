@@ -26,4 +26,7 @@ export const NavItem = styled.a`
       display: none;
     }
   }
+  &:hover {
+    opacity: 0.6;
+  }
 `;
