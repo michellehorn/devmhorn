@@ -15,26 +15,36 @@ import {
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import firebase from "firebase";
 import { isMobile } from 'react-device-detect';
+import Alert from '../components/Alert/Alert';
 
 export const Contact = () => {
   const [state, setState] = useState({
     name: "",
     email: "",
     message: "",
-    phone: "0",
+    phone: "",
     dateTime: new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
   })
+  const [alertMessage, setAlertMessage] = useState("");
+  const [alertType, setAlertType] = useState("");
 
   const verifyField = (fields) => {
     let isComplete = true;
     let incompleteFields = [];
     Object.keys(fields).forEach((item) => {
       if (fields[item] === "") {
-       isComplete = false;
-       incompleteFields.push(item);
+        isComplete = false;
+        incompleteFields.push(item);
       }
     })
-    if (incompleteFields.length > 0) alert(`Preencha o(s) campo(s) ${incompleteFields}`)
+    if (incompleteFields.length > 0) {
+      setAlertType('error')
+      setAlertMessage(`Preencha o(s) campo(s) ${incompleteFields}`)
+      setTimeout(() => {
+        setAlertMessage(null);
+        setAlertType(null)
+      }, 3000);
+    }
     return isComplete;
   }
 
@@ -51,8 +61,20 @@ export const Contact = () => {
     let ref = firebase.database().ref("messages");
     if (verifyField(state)) {
       ref.push(state, () => {
-        alert("Mensagem enviada!");
+        setAlertMessage("Mensagem enviada!");
+        setAlertType("success")
       });
+      setTimeout(() => {
+        setState({
+          name: "",
+          email: "",
+          message: "",
+          phone: "",
+          dateTime: new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
+        })
+        setAlertMessage(null);
+        setAlertType(null)
+      }, 2000);
     }
   };
 
@@ -91,14 +113,15 @@ export const Contact = () => {
           </Box>
           <Box className="yellow-dark-bg">
             <Form onSubmit={handleSubmit}>
-              <Input onChange={handleChange} placeholder="Name" name="name" />
-              <Input onChange={handleChange} placeholder="E-mail" name="email" />
-              <Input onChange={handleChange} placeholder="Phone number (optional)" name="phone" />
-              <TextArea onChange={handleChange} placeholder="Message" name="message" />
+              <Input onChange={handleChange} placeholder="Name" name="name" value={state.name} />
+              <Input onChange={handleChange} placeholder="E-mail" name="email" value={state.email} />
+              <Input onChange={handleChange} placeholder="Phone number (optional)" name="phone" value={state.phone} />
+              <TextArea onChange={handleChange} placeholder="Message" name="message" value={state.message} />
               <SubmitButton type="submit">Enviar</SubmitButton>
             </Form>
           </Box>
         </Container>
+        <Alert message={alertMessage} type={alertType} />
       </Section>
     </>
   );
