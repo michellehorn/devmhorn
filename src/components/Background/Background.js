@@ -3,12 +3,12 @@ import React from "react";
 import { ContainerBg } from "./style";
 import { Section } from "../../style";
 
-function Background(props) {
+function Background({ children }) {
     return (
       <>
         <Section height="110vh" className="dark-bg" zindex="-2">
         <ContainerBg />
-        {props.children}
+        {children}
         </Section>
       </>
     );

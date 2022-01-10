@@ -67,7 +67,6 @@ export default class Skills extends Component {
 
               </BoxArea>
             </Container>
-
           </Container>
         </Section>
       </>

@@ -2,15 +2,15 @@ import React from "react";
 import { Card } from "./style";
 import { Text, ButtonProj, Container } from "../../style";
 
-function ProjectCard(props) {
+function ProjectCard({ img, link, text }) {
   return (
-    <Card image={props.img} className="test">
-      <Text>{props.text}</Text>
+    <Card image={img} className="test">
+      <Text>{text}</Text>
       <Container>
         <ButtonProj
           color="white"
           bgColor="#C2946D"
-          onClick={() => window.open(props.link, "_blank")}
+          onClick={() => window.open(link, "_blank")}
         >
           View demo
         </ButtonProj>

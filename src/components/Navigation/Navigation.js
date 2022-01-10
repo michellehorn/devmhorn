@@ -8,7 +8,7 @@ import list from '../../assets/icons/lista-de-compras.svg'
 import think from '../../assets/icons/pensamento.svg'
 import { isMobile } from 'react-device-detect';
 
-function Navigation(props) {
+function Navigation({ hash, children }) {
   const tab = [
     { to: "home", text: "Home", icon: casa },
     { to: "about", text: "About me", icon: util },
@@ -25,7 +25,7 @@ function Navigation(props) {
     } else {
       return tab.map(item => (
         <NavItem
-          className={`${props.hash}` === `#${item.to}` ? "active" : ""}
+          className={`${hash}` === `#${item.to}` ? "active" : ""}
           href={`#${item.to}`}
           key={item.to.toString()}
         >
@@ -36,7 +36,7 @@ function Navigation(props) {
     }
   }
   
-  return <Navbar className={props.children}>{listItems()}</Navbar>;
+  return <Navbar className={children}>{listItems()}</Navbar>;
 }
 
 export default Navigation;
