@@ -50,16 +50,18 @@ export const Badge = styled.div`
 
 export const Content = styled.p`
   color: #000014;
-  font-size: 20px;
+  font-size: 17px;
 `;
 
 export const Image = styled.img`
-  width: 300px;
+  width: 250px;
+  border-radius: 50%;
+  border: 6px solid #DAA520;
 `;
 
 export const Icon = styled.img`
   width: ${props => props.size}px;
-  margin: 10px 15px;
+  margin: 0 15px;
   `
 
 export const BoxArea = styled.div`
@@ -67,13 +69,13 @@ export const BoxArea = styled.div`
   margin: ${props => props.margin};
   margin-top: 3em;
   height: 500px;
-  min-width: 400px;
+  min-width: 300px;
   padding: 10px;
   padding-top: 1em;
 `;
 
 export const Text = styled.span`
-  color: ${props => (props.color ? props.color : "white")};
+  color: ${props => (props.color || "white")};
   font-size: ${props => props.size}px;
   display: block;
   font-weight: ${props => props.fontWeight};
@@ -82,11 +84,11 @@ export const Text = styled.span`
 `;
 
 export const Box = styled.div`
-  height: 500px;
+  height: ${props => (props.height  || '500px')};
   margin-top: 1em;
   width: 95%;
   max-width: 700px;
-  padding: 2em 10px;
+  padding: ${props => (props.padding  || '2em 10px')};
 `;
 
 export const Form = styled.form`
@@ -96,7 +98,7 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  height: 48px;
+  height: 38px;
   border: 2px solid white;
   font-size: 17px;
   color: white;
@@ -119,7 +121,7 @@ export const Link = styled.a`
 `;
 
 export const TextArea = styled.textarea`
-  height: 170px;
+  height: 120px;
   width: 100%;
   padding: 0px 6px;
   padding-top: 8px;

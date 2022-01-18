@@ -20,7 +20,7 @@ function Navigation({ hash, children }) {
   const listItems = () => {
     if(isMobile) {
       return tab.map(item => (
-        <a href={`#${item.to}`}><Icon alt={item.text} src={item.icon} size={30}/></a>
+        <a href={`#${item.to}`}><Icon alt={item.text} src={item.icon} size={25}/></a>
       ));
     } else {
       return tab.map(item => (

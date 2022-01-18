@@ -1,6 +1,6 @@
 import React from "react";
 import { Section, Badge, Container, Content, Image } from "../style";
-import profileImg from "../assets/photo.svg";
+import profileImg from "../assets/profile.jpeg";
 import { isMobile } from 'react-device-detect';
 import { aboutMe } from '../assets/copy/copy';
 

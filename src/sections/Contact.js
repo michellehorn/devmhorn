@@ -83,7 +83,7 @@ export const Contact = () => {
       <Section className="yellow-bg" height="220vh">
         <Badge>Contact</Badge>
         <Container className={`${isMobile ? "" : 'd-flex'}`} top={70} padding="0">
-          <Box className="dark-bg" height={`${isMobile ? "400vh" : ""}`}>
+          <Box className="dark-bg" height="450px" padding="8px">
             <div className="pt-2">
               <Title size={100}>get in</Title>
               <Title size={90} className="pl-2">
@@ -111,7 +111,7 @@ export const Contact = () => {
               <Text size={17}>dev.michellehorn@gmail.com</Text>
             </Container>
           </Box>
-          <Box className="yellow-dark-bg">
+          <Box className="yellow-dark-bg" height="450px" padding="8px">
             <Form onSubmit={handleSubmit}>
               <Input onChange={handleChange} placeholder="Name" name="name" value={state.name} />
               <Input onChange={handleChange} placeholder="E-mail" name="email" value={state.email} />

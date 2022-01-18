@@ -9,8 +9,6 @@ import a6 from "../../assets/images/A6.png";
 export const aboutMe = `Hi, my name is Michelle Horn, I’m a front-end developer, with about 6 years of experience. 
 I’m from Florianópolis/BR where I currently live. During my journey, I’ve worked with the top 3 front-end technologies (Angular 2+, Reactjs and Vuejs), 
 besides having solid knowledge in base technologies (html, css, javascript). I love the education field and have big involvement with the cause. 
-I’m currently working with the company Loft, our solution is an realstate app for buying and selling properties, 
-and I’m also involvment with Gama Experience, a project from Gama Academy (where I help as a mentor for new developers during the course). 
 Personally, I define myself as a “Nuttela nerd”, cause even tho in love with technology, Star Wars, super heroes and games, 
 I also love going to the bar to drink some beer with friends. You can check more about me in the next sections of this website`
 

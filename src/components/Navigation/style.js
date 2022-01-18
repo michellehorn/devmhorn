@@ -17,7 +17,7 @@ export const Navbar = styled.nav`
 export const NavItem = styled.a`
   color: white;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   span {
     padding: 15px;
   }
