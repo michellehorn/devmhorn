@@ -1,0 +1,21 @@
+name: 'Keep dev branch in sync with main'
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  main:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: 'actions/checkout@v3'
+
+      - run: |
+         gh pr create \
+           --base development
+           --title "chore: sync dev with main"
+         gh pr merge master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
