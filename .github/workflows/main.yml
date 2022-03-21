@@ -12,7 +12,7 @@ jobs:
       - uses: 'actions/checkout@v3'
 
       - run: |
-         gh pr create --base development --title "chore: sync dev with main"
+         gh pr create --base development --title "chore: sync dev with main" --body "Everything works again"
          gh pr merge master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
