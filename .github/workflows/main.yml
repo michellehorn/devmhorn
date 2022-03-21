@@ -14,7 +14,7 @@ jobs:
       - run: |
          gh pr create --base development --title "chore: sync dev with main" 
          gh pr list
-         gh --merge master
+         gh pr merge
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
