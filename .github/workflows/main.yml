@@ -1,4 +1,4 @@
-name: 'Keep dev branch in sync with main'
+name: 'Keep dev branch in sync with main and deploy work'
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  main:
+  sync_dev_with_master:
     runs-on: 'ubuntu-latest'
     steps:
       - uses: 'actions/checkout@v3'
