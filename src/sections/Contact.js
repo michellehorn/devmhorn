@@ -32,7 +32,7 @@ export const Contact = () => {
     let isComplete = true;
     let incompleteFields = [];
     Object.keys(fields).forEach((item) => {
-      if (fields[item] === "") {
+      if (fields[item] === "" && item !== 'phone') {
         isComplete = false;
         incompleteFields.push(item);
       }
